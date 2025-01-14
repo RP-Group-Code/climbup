@@ -1,0 +1,365 @@
+/* .caveat-<uniquifier> {
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+/* .libre-baskerville-regular {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.libre-baskerville-bold {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+} */
+@media (max-width: 768px) {
+    body {
+        background: #fff;
+        font-family: "Roboto", arial, sans-serif;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #6c757d;
+        position: relative;
+    }
+
+    ::-moz-selection {
+        color: #fff;
+        background: #80aa5e;
+    }
+
+    ::selection {
+        color: #fff;
+        background: #ffba5a;
+    }
+
+    .logo {
+        width: 140px;
+    }
+    .img_jumbotron {
+        margin-top: 4rem;
+        width: 500px !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .gambar_produk img {
+        max-width: 310px !important;
+        border-radius: 5rem 1rem 5rem 1rem !important;
+    }
+    .mini_image_produk {
+        top: -70px;
+        height: 320px !important;
+    }
+    .large_image_produk1 {
+        position: relative;
+        height: 400px !important;
+    }
+    .large_image_produk2 {
+        position: relative;
+        top: -70px !important;
+        height: 400px !important;
+    }
+    .leftbtm_img_produk {
+        height: 320px;
+        top: -70px;
+        position: relative;
+    }
+    .text_content_header > p {
+        padding: 0;
+        margin: 0%;
+        font-size: 1.5rem !important;
+        font-family: "Caveat", serif;
+    }
+    .text_content_header {
+        color: black;
+        font-size: 2rem;
+        font-weight: 700 !important;
+    }
+
+    form .form-control {
+        font-size: 14px !important;
+    }
+    .logo-footer {
+        width: 250px !important;
+    }
+    .menu {
+        min-height: 120vh;
+        background-color: #d7d2c4;
+    }
+    footer {
+        font-size: 14px !important;
+    }
+    .row.g-0 {
+        flex-direction: column;
+    }
+    .left-section,
+    .right-section {
+        padding: 20px;
+    }
+    .coffee-img {
+        z-index: 100;
+        position: relative;
+        top: -10px;
+        width: 450px;
+        height: auto;
+    }
+    .product_container {
+        padding-top: 5rem !important;
+    }
+    .card-custom {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to left, #a77c4f, #759edb);
+    }
+
+    .row.g-0 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section,
+    .right-section {
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .center-section {
+        margin: 20px 0;
+    }
+
+    .head_card_title {
+        font-size: 3rem !important;
+    }
+
+    .head_card_deskripsi {
+        font-size: 1.2rem;
+    }
+
+    .head_card_subdeskripsi {
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width: 768px) {
+    nav {
+        font-size: 1.3rem;
+        font-weight: 400;
+        padding: 1rem 10rem !important;
+        position: relative;
+    }
+    .navbar {
+        transition: background-color 1s ease;
+        background-color: transparent !important;
+        box-shadow: none;
+    }
+    .navbar-scrolled {
+        background-color: white !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-scrolled a.nav-link {
+        transition: font-size 0.51s ease;
+        font-size: 1.4rem;
+        color: black !important;
+        background-color: transparent !important;
+    }
+    .nav-inline {
+        padding: 0 3rem 0 3rem !important;
+    }
+    .logo {
+        width: 150px !important;
+    }
+    .logo-footer {
+        width: 350px !important;
+    }
+    .nav-item {
+        margin-right: 2rem;
+    }
+    .nav-item > a:hover {
+        color: #5e7daa !important;
+        border: black;
+    }
+    .nav-item > a {
+        transition: color 1s ease;
+        color: #ffffff !important;
+    }
+
+    .jumbotron .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Warna hitam semi transparan */
+        z-index: 2;
+    }
+    .jumbotron {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        text-align: center;
+        z-index: 3;
+    }
+    .menu {
+        min-height: 120vh;
+        background-color: #b98d5f;
+    }
+    .img_jumbotron {
+        margin: 0;
+        width: 100%;
+    }
+
+    .containt_card_menu {
+        position: relative;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .card_form {
+        z-index: 3;
+        height: fit-content;
+        position: relative;
+        margin-top: -5%;
+        left: auto;
+    }
+    .card_form,
+    .card-body {
+        min-height: max-content !important;
+        padding-inline: 3rem;
+        font-weight: 700;
+    }
+    .tombol-check {
+        width: 220px;
+        border-radius: 0.6rem;
+    }
+    .about_content {
+        color: black;
+    }
+    .text_content_header {
+        color: black;
+        font-size: 3rem;
+        font-weight: 700 !important;
+    }
+    .text_content_body {
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 500 !important;
+    }
+    .text_content_header > p {
+        padding: 0;
+        margin: 0%;
+        font-size: 1.8rem;
+        font-family: "Caveat", serif;
+    }
+    .product_container {
+        padding-top: 5rem !important;
+    }
+    .produk {
+        display: flex !important;
+        position: relative;
+        width: max-content;
+        height: fit-content;
+    }
+    .gambar_produk img {
+        max-width: 220px !important;
+        border-radius: 5rem 1rem 5rem 1rem !important;
+    }
+    .leftbtm_img_produk {
+        position: relative;
+        height: 360px !important;
+        top: -90px !important;
+    }
+    .mini_image_produk {
+        top: -70px;
+        height: 350px !important;
+    }
+    .large_image_produk1 {
+        position: relative;
+        height: 400px !important;
+    }
+    .large_image_produk2 {
+        position: relative;
+        top: -70px !important;
+        height: 400px !important;
+    }
+    .deskripsi h2 {
+        color: #5e7daa;
+        font-weight: 600 !important;
+    }
+
+    .card-custom {
+        padding-top: 1rem;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to left, #a77c4f, #759edb);
+    }
+
+    .left-section {
+        padding: 10px 0 50px 80px !important;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        height: 100%;
+    }
+
+    .right-section {
+        padding: 10px 50px 0 0px !important;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .center-section {
+        z-index: 10;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .coffee-img {
+        z-index: 100;
+        position: relative;
+        top: -10px;
+        width: 650px;
+        height: auto;
+    }
+    .coffe_popup {
+        position: relative;
+        align-items: center;
+        width: 100%;
+    }
+    .btn-custom {
+        color: white;
+        text-decoration: none;
+    }
+    .head_card_title {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 5rem !important;
+    }
+    .head_card_deskripsi {
+        font-size: 1.5rem;
+    }
+    .head_card_subdeskripsi {
+        font-size: 1.1rem;
+    }
+    .tombol_reservation a {
+        text-align: left !important;
+    }
+}
