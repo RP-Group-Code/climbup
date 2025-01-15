@@ -87,6 +87,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @include('sweetalert::alert')
 
+    @if (session('loginEror'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'FAILED!',
+                text: '{{ session('loginEror') }}',
+                timer: 15000, // Durasi dalam milidetik (5000ms = 5 detik)
+                timerProgressBar: true, // Menampilkan progress bar
+                showConfirmButton: false // Tombol "OK" tidak ditampilkan
+            });
+        </script>
+    @endif
 </body>
 
 </html>

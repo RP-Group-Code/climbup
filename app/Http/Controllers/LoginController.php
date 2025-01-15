@@ -30,7 +30,7 @@ class LoginController extends Controller
                 return redirect()->route("Dashboard Reservasi");
             } else {
 
-                return redirect()->back();
+                return back()->with('loginEror', "Username or Password is incorrect");
             }
         } else {
             return back()->with('loginEror', true);
@@ -40,7 +40,8 @@ class LoginController extends Controller
     public function logout()
     {
         Session::flush();
-        return redirect('/');
+        return redirect()->back()->with('error', "Berhasil Logout");
+        // return redirect('/');
     }
     /**
      * Show the form for creating a new resource.
