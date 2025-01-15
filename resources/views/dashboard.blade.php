@@ -67,7 +67,7 @@
                     <div class="row pt-5">
                         <div class="data-reservasi">
                             <center>
-                                <h1 class="pb-2">Data Resrvasi Pelanggan</h1>
+                                <h1 class="pb-2">Data Resrvasi Customer</h1>
                             </center>
                             <div class="table-responsive">
                                 <table class="table table-striped">
