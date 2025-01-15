@@ -109,7 +109,8 @@
                                             do eiusmod tempor
                                             incididunt ut labore et dolore magna aliqua.</p>
                                         <button type="button" class="btn btn-info" data-toggle="modal"
-                                            data-target="#exampleModal" style="font-size: 1.2rem">Make Reservation</button>
+                                            data-target="#exampleModal" style="font-size: 1.2rem">Make
+                                            Reservation</button>
 
 
                                     </div>
@@ -240,23 +241,23 @@
                 <div class="modal-header">
                     <h3 class="modal-title" id="exampleModalLabel">Reserv Table</h3>
                 </div>
-                <div class="modal-body">
-                    <form action="{{ route('Post Reservasi') }}" method="POST">
+                <form action="{{ route('Post Reservasi') }}" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
                         @csrf
                         <div class="form-group mt-2">
                             <label for="exampleFormControlInput1">Nama Pemesan</label>
-                            <input name="nama" type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Nama Pemesan Atas Nama ?">
+                            <input required name="nama" type="text" class="form-control"
+                                id="exampleFormControlInput1" placeholder="Nama Pemesan Atas Nama ?">
                         </div>
                         <div class="form-group mt-2">
                             <label for="exampleFormControlInput1">Email Pemesan</label>
-                            <input name="email" type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Email Pemesan">
+                            <input required name="email" type="email" class="form-control"
+                                id="exampleFormControlInput1" placeholder="Email Pemesan">
                         </div>
                         <div class="form-group mt-2">
                             <label for="exampleFormControlInput1">No Hanphone</label>
-                            <input name="email" type="number" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Kontak Pemesan">
+                            <input required name="no_hp" type="number" class="form-control"
+                                id="exampleFormControlInput1" placeholder="Kontak Pemesan">
                         </div>
                         <div class="form-group mt-2">
                             <label for="exampleFormControlSelect1">Jumlah Orang</label>
@@ -272,7 +273,7 @@
                             <div class="col-6">
                                 <div class="form-group mt-2">
                                     <label for="exampleFormControlInput1">Reservation</label>
-                                    <input name="tanggal" type="date" class="form-control"
+                                    <input required name="tanggal" type="date" class="form-control"
                                         id="exampleFormControlInput1" placeholder="tanggal reservasi ? ">
 
                                 </div>
@@ -280,7 +281,7 @@
                             <div class="col-6">
                                 <div class="form-group mt-2">
                                     <label for="exampleFormControlInput1"> </label>
-                                    <input name="waktu" type="time" class="form-control"
+                                    <input required name="waktu" type="time" class="form-control"
                                         id="exampleFormControlInput1" placeholder="tanggal reservasi ? ">
 
                                 </div>
@@ -291,12 +292,13 @@
                             <label for="exampleFormControlTextarea1">Note or Special Request</label>
                             <textarea name="note" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save changes</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Save changes</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>

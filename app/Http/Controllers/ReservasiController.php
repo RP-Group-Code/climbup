@@ -28,16 +28,7 @@ class ReservasiController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'no_hp' => 'required|numeric',
-            'jumlah_orang' => 'required|string',
-            'tanggal' => 'required|date',
-            'waktu' => 'required',
-            'note' => 'nullable|string',
-        ]);
-
+    
         // Simpan ke database
         $data = new reservasi();
         $data->nama = $request->nama;
