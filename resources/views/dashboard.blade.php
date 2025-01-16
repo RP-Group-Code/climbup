@@ -8,16 +8,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/4c68d22cde.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/4c68d22cde.js" crossorigin="anonymous"></script>
         <title>Document</title>
     </head>
 
-    <body>
+    <body style="background-color: rgb(236, 237, 245)">
         <div class="container">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <img src="/img/climbuplogo.png" alt="climbup" class="logo" style="width: 155px">
-
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -38,30 +38,52 @@
                 </div>
             </nav>
             <div class="main">
-                <div class="info">
+                <div class="info" >
                     <div class="row pt-5 pb-5">
                         <div class="col-sm-6 col-lg-4">
-                            .<div class="card text-left bg-light">
-                                <div class="card-body">
-                                    <p class="card-text">
-                                        body
-                                    </p>
+                            <div class="card text-white bg-info mb-3">
+                                <div class="card-header text-center"> <b> RESERVASI TODAY</b></div>
+                                <div class="card-body" style="height: 5rem">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="card-title">{{$reservasiToday}} Customer Reservasi Today</h5>
+                                        </div>
+                                        <div class="col-3">
+                                            <i class="fa-solid fa-users" style="font-size: 3rem"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                              </div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
-                            .<div class="card text-left bg-light">
-                                <div class="card-body">
-                                    <p class="card-text">Body</p>
+                            <div class="card text-white bg-warning mb-3">
+                                <div class="card-header text-center"> <b>CANCEL RESERVASI</b></div>
+                                <div class="card-body" style="height: 5rem">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="card-title">{{$reservasiToday}} Customer Cancel Reservasi</h5>
+                                        </div>
+                                        <div class="col-3">
+                                            <i class="fa-solid fa-users" style="font-size: 3rem"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                              </div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
-                            .<div class="card text-left bg-light">
-                                <div class="card-body">
-                                    <p class="card-text">Body</p>
+                            <div class="card text-white bg-success mb-3">
+                                <div class="card-header text-center"> <b>JUMLAH RESERVASI SELESAI</b></div>
+                                <div class="card-body" style="height: 5rem">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="card-title">{{$countYesterday}}  Reservasi Done</h5>
+                                        </div>
+                                        <div class="col-3">
+                                            <i class="fa-solid fa-clipboard-check" style="font-size: 3rem"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                              </div>
                         </div>
                     </div>
                     <div class="row pt-5">

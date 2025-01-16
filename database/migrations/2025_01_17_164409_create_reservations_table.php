@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservasi', function (Blueprint $table) {
+        Schema::create('reservasis', function (Blueprint $table) {
             $table->id();
             $table->string('kode_reservasi');
             $table->string('nama');
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('jumlah_orang');
             $table->date('tanggal');
             $table->time('waktu');
+            $table->enum('status',['Batal','Selesai']);
             $table->text('note')->nullable();
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservasi');
+        Schema::dropIfExists('reservasis');
     }
 };
