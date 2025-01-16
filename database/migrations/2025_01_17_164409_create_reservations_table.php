@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('jumlah_orang');
             $table->date('tanggal');
             $table->time('waktu');
-            $table->enum('status',['Batal','Selesai']);
+            $table->enum('status',['Batal','Selesai','Reservasi']);
             $table->text('note')->nullable();
             $table->timestamps();
         });

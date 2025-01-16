@@ -8,7 +8,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/4c68d22cde.js" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/4c68d22cde.js" crossorigin="anonymous"></script>
         <title>Document</title>
     </head>
 
@@ -38,7 +37,7 @@
                 </div>
             </nav>
             <div class="main">
-                <div class="info" >
+                <div class="info">
                     <div class="row pt-5 pb-5">
                         <div class="col-sm-6 col-lg-4">
                             <div class="card text-white bg-info mb-3">
@@ -46,14 +45,14 @@
                                 <div class="card-body" style="height: 5rem">
                                     <div class="row">
                                         <div class="col-9">
-                                            <h5 class="card-title">{{$reservasiToday}} Customer Reservasi Today</h5>
+                                            <h5 class="card-title">{{ $reservasiToday }} Customer Reservasi Today</h5>
                                         </div>
                                         <div class="col-3">
                                             <i class="fa-solid fa-users" style="font-size: 3rem"></i>
                                         </div>
                                     </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="card text-white bg-warning mb-3">
@@ -61,14 +60,14 @@
                                 <div class="card-body" style="height: 5rem">
                                     <div class="row">
                                         <div class="col-9">
-                                            <h5 class="card-title">{{$reservasiToday}} Customer Cancel Reservasi</h5>
+                                            <h5 class="card-title">{{ $countCancel }} Customer Cancel Reservasi</h5>
                                         </div>
                                         <div class="col-3">
                                             <i class="fa-solid fa-users" style="font-size: 3rem"></i>
                                         </div>
                                     </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="card text-white bg-success mb-3">
@@ -76,14 +75,14 @@
                                 <div class="card-body" style="height: 5rem">
                                     <div class="row">
                                         <div class="col-9">
-                                            <h5 class="card-title">{{$countYesterday}}  Reservasi Done</h5>
+                                            <h5 class="card-title">{{ $countDone }} Reservasi Done</h5>
                                         </div>
                                         <div class="col-3">
                                             <i class="fa-solid fa-clipboard-check" style="font-size: 3rem"></i>
                                         </div>
                                     </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row pt-5">
@@ -101,7 +100,8 @@
                                             <th scope="col">Jumlah</th>
                                             <th scope="col">Tanggal</th>
                                             <th scope="col">Waktu</th>
-                                            <th scope="col">Note</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -119,7 +119,40 @@
                                                 </td>
                                                 <td scope="row"> {{ $data->waktu }}
                                                 </td>
-                                                <td scope="row"> {{ $data->note }}
+                                                <td scope="row">
+                                                    @if ($data->status == 'Selesai')
+                                                        <BUTton class="btn btn-success disabled">
+                                                            {{ $data->status }}
+                                                        </BUTton>
+                                                    @elseif ($data->status == 'Batal')
+                                                        <BUTton class="btn btn-danger disabled">
+                                                            {{ $data->status }}
+                                                        </BUTton>
+                                                    @else
+                                                        <BUTton class="btn btn-secondary disabled">
+                                                            {{ $data->status }}
+                                                        </BUTton>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <select class="form-control update-status" id="update-status"
+                                                            name="status" data-id="{{ $data->id }}">
+                                                            <option value=""
+                                                                {{ empty($data->status) ? 'selected' : '' }}>Pilih Ubah
+                                                                Status</option>
+                                                            <option value="Batal"
+                                                                {{ $data->status == 'Batal' ? 'selected' : '' }}>Batal
+                                                            </option>
+                                                            <option value="Selesai"
+                                                                {{ $data->status == 'Selesai' ? 'selected' : '' }}>
+                                                                Selesai</option>
+                                                            <option value="Reservasi"
+                                                                {{ $data->status == 'Reservasi' ? 'selected' : '' }}>
+                                                                Reservasi</option>
+                                                        </select>
+
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -136,18 +169,10 @@
 
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         @include('sweetalert::alert')
         @if (session('success'))
             <script>
@@ -161,6 +186,60 @@
                 });
             </script>
         @endif
+        <script>
+            $(document).on('change', '.update-status', function() {
+                var status = $(this).val(); // Ambil nilai status dari dropdown
+                var id = $(this).data('id'); // Ambil ID data dari atribut data-id
+
+                if (status) {
+                    $.ajax({
+                        url: "{{ route('Update Reservasi') }}",
+                        method: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            id: id,
+                            status: status
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil!',
+                                text: response.message,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                showConfirmButton: false
+                            });
+
+                            // Setelah berhasil update, lakukan GET untuk memperbarui tabel
+                            fetchData();
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Gagal!',
+                                text: 'Terjadi kesalahan, silakan coba lagi.',
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Fungsi untuk mendapatkan data terbaru dan memperbarui tabel
+            function fetchData() {
+                $.ajax({
+                    url: "{{ route('getDataReservasi') }}", // Sesuaikan dengan route untuk mendapatkan data terbaru
+                    method: "GET",
+                    success: function(data) {
+                        // Replace data tabel dengan data baru
+                        $('tbody').html(data);
+                    },
+                    error: function(xhr) {
+                        console.error('Error fetching data:', xhr);
+                    }
+                });
+            }
+        </script>
+
     </body>
 
     </html>
