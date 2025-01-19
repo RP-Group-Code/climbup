@@ -8,7 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/4c68d22cde.js" crossorigin="anonymous"></script>
-        <title>Document</title>
+        <title>Dashboard Reservasi</title>
     </head>
 
     <body style="background-color: rgb(236, 237, 245)">
@@ -63,7 +63,7 @@
                                             <h5 class="card-title">{{ $countCancel }} Customer Cancel Reservasi</h5>
                                         </div>
                                         <div class="col-3">
-                                            <i class="fa-solid fa-users" style="font-size: 3rem"></i>
+                                            <i class="fa-solid fa-ban" style="font-size: 3rem"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -232,9 +232,28 @@
                     success: function(data) {
                         // Replace data tabel dengan data baru
                         $('tbody').html(data);
+                        fetchCardData();
                     },
                     error: function(xhr) {
                         console.error('Error fetching data:', xhr);
+                    }
+                });
+            }
+
+            function fetchCardData() {
+                $.ajax({
+                    url: "{{ route('getCardData') }}",
+                    method: "GET",
+                    success: function(data) {
+                        // Perbarui card dengan data baru
+                        $('.card-title:contains("Customer Reservasi Today")').text(
+                            `${data.reservasiToday} Customer Reservasi Today`);
+                        $('.card-title:contains("Customer Cancel Reservasi")').text(
+                            `${data.countCancel} Customer Cancel Reservasi`);
+                        $('.card-title:contains("Reservasi Done")').text(`${data.countDone} Reservasi Done`);
+                    },
+                    error: function(xhr) {
+                        console.error('Error fetching card data:', xhr);
                     }
                 });
             }

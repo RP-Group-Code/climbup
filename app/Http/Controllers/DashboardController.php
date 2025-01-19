@@ -25,6 +25,18 @@ class DashboardController extends Controller
         ];
         return view('dashboard', $data);
     }
+    public function getCardData()
+    {
+        $reservasiToday = Reservasi::whereDate('tanggal', today())->count();
+        $countCancel = Reservasi::where('status', 'Batal')->count();
+        $countDone = Reservasi::where('status', 'Selesai')->count();
+
+        return response()->json([
+            'reservasiToday' => $reservasiToday,
+            'countCancel' => $countCancel,
+            'countDone' => $countDone,
+        ]);
+    }
     public function updateStatus(Request $request)
     {
         // Validasi data

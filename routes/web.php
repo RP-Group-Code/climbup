@@ -20,12 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['middleware' => ['authCheck']], function () {
-
     Route::controller(DashboardController::class)->group(function () {
-
         Route::get('/reservasi/data','getDataReservasi')->name('getDataReservasi');
         Route::get('/dashboard', 'index')->name('Dashboard Reservasi');
         Route::post('/reservasi/update-status', 'updateStatus')->name('Update Reservasi');
+        Route::get('/dashboard/cards', 'getCardData')->name('getCardData');
+
     });
 });
 
